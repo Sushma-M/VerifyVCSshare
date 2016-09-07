@@ -4,6 +4,10 @@
         <dataobject javaType="com.verifyvcsshare.dbtest_shared.Table1">
             <element name="fname" typeRef="java.lang.String" allowNull="true"/>
             <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="name" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.verifyvcsshare.dbtest_shared.Table2">
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.wavemaker.runtime.data.expression.QueryFilter">
             <element name="attributeName" typeRef="java.lang.String" allowNull="true"/>
