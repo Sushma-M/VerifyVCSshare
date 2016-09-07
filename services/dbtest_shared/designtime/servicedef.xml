@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="dbtest_shared" type="DataService" springFile="dbtest_shared.spring.xml">
     <dataobjects>
+        <dataobject javaType="com.verifyvcsshare.dbtest_shared.Dept">
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+        </dataobject>
         <dataobject javaType="com.verifyvcsshare.dbtest_shared.Table1">
             <element name="fname" typeRef="java.lang.String" allowNull="true"/>
             <element name="id" typeRef="java.lang.Integer" allowNull="true"/>

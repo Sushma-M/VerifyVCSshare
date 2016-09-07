@@ -35,31 +35,6 @@
         "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
-      },
-      "fieldName" : "name",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "string",
-      "length" : 255,
-      "name" : "name",
-      "nullable" : true,
-      "oldName" : "name",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "precision" : 19,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "string",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
         "defaultValue" : ""
       },
       "fieldName" : "fname",
@@ -128,10 +103,10 @@
       "unique" : true
     } ],
     "constraints" : [ ],
-    "entityName" : "Table2",
-    "fullyQualifiedName" : "com.verifyvcsshare.dbtest_shared.Table2",
-    "name" : "TABLE2",
-    "oldName" : "TABLE2",
+    "entityName" : "Dept",
+    "fullyQualifiedName" : "com.verifyvcsshare.dbtest_shared.Dept",
+    "name" : "Dept",
+    "oldName" : "Dept",
     "primaryKey" : {
       "columns" : [ "ID" ],
       "composite" : false,
