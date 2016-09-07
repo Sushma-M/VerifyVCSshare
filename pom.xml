@@ -25,6 +25,13 @@
                     <exclude>**/*.java</exclude>
                 </excludes>
             </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>services/testdb1_query/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
         </resources>
         <finalName>VerifyVCSshare</finalName>
         <filters>
@@ -95,6 +102,7 @@
                             <sources>
                                 <source>services/dbtest_shared/src</source>
                                 <source>services/hrdb/src</source>
+                                <source>services/testdb1_query/src</source>
                             </sources>
                         </configuration>
                     </execution>
