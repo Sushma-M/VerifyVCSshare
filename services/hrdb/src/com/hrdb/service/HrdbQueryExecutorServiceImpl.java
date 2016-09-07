@@ -32,6 +32,13 @@ public class HrdbQueryExecutorServiceImpl implements HrdbQueryExecutorService {
 	@Qualifier("hrdbWMQueryExecutor")
 	private WMQueryExecutor queryExecutor;
 
+	@Transactional(value = "hrdbTransactionManager")
+	@Override
+	public Page<Object> executeTestq(Pageable pageable)
+	throws QueryParameterMismatchException{
+        Map<String, Object> params = new HashMap<String, Object>();
+        return queryExecutor.executeNamedQuery("testq", params, pageable);
+	}
 
 	@Transactional(value = "hrdbTransactionManager")
 	@Override

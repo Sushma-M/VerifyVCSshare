@@ -1,5 +1,22 @@
 {
   "name" : "hrdb",
   "description" : "Queries for hrdb",
-  "queries" : [ ]
+  "queries" : [ {
+    "name" : "testq",
+    "query" : "select * from USER",
+    "comment" : "testq",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : false,
+    "queryParams" : [ ],
+    "outputType" : "hrdbtestqrtnType",
+    "returnTypeMetadata" : {
+      "PASSWORD" : "java.lang.String",
+      "ROLE" : "java.lang.String",
+      "TENANT_ID" : "java.lang.Integer",
+      "USERNAME" : "java.lang.String",
+      "USER_ID" : "java.lang.Integer"
+    }
+  } ]
 }
