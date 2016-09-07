@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="hrdb" type="DataService" springFile="hrdb.spring.xml">
     <operation operationType="nativequery" name="testq">
-        <return isList="false"/>
+        <return typeRef="hrdbtestqrtnType" isList="false"/>
     </operation>
     <operation operationType="nativequery" name="testq">
         <return typeRef="hrdbtestqrtnType" isList="false"/>

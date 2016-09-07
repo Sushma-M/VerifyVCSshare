@@ -86,6 +86,7 @@ public class DepartmentController {
 
     @RequestMapping(value = "/deptCode/{deptCode}", method = RequestMethod.GET)
     @ApiOperation(value = "Returns the matching Department with given unique key values.")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     public Department getByDeptCode(@PathVariable("deptCode") String deptCode) {
         LOGGER.debug("Getting Department with uniques key DeptCode");
         return departmentService.getByDeptCode(deptCode);
@@ -126,8 +127,9 @@ public class DepartmentController {
         return departmentService.count(query);
     }
 
-    @RequestMapping(value = "/{id:.+}/employees", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}/employees", method = RequestMethod.GET)
     @ApiOperation(value = "Gets the employees instance associated with the given id.")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     public Page<Employee> findAssociatedEmployees(@PathVariable("id") Integer id, Pageable pageable) {
         LOGGER.debug("Fetching all associated employees");
         return departmentService.findAssociatedEmployees(id, pageable);
