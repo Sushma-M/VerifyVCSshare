@@ -15,3 +15,17 @@ Application.$controller("MainPageController", ["$scope", function ($scope) {
     };
 
 }]);
+
+Application.$controller("grid1Controller", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);
+
+Application.$controller("liveform1Controller", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);
