@@ -1,7 +1,7 @@
 <style id="Main.css">
-    .angular-google-map-container {
-        height: 300px;
-    }
+.angular-google-map-container {
+    height: 300px;
+}
 </style>
 <script id="Main.js">
 /*global WM,_,google,Application*/
@@ -189,8 +189,8 @@ Application.$controller('GooglemapsController', ['$scope', 'Utils', '$element', 
             }
             $http.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + address).then(function (response) {
                 var resultdataSet = response.data.results[0],
-                        geometryLocations,
-                        latlng;
+                    geometryLocations,
+                    latlng;
                 if (resultdataSet) {
                     geometryLocations = resultdataSet.geometry.location;
                     lat     = geometryLocations.lat;
@@ -227,8 +227,8 @@ Application.$controller('GooglemapsController', ['$scope', 'Utils', '$element', 
                 return;
             }
             var content = '',
-                    latlngData = p.latlng.replace(/\[|\]/g, '').split(','),
-                    center = constructLatLngObject(latlngData[0], latlngData[1]);
+                latlngData = p.latlng.replace(/\[|\]/g, '').split(','),
+                center = constructLatLngObject(latlngData[0], latlngData[1]);
             if (infoWindow) { //close other info windows if they're open
                 infoWindow.close();
             }
@@ -732,8 +732,8 @@ Application.$controller('GooglemapsController', ['$scope', 'Utils', '$element', 
                 toggleLoader(false);
             });
             /*Necessary in order to set the map to idle state as adding heat map is only a layer
-             but not the operation on the map.
-             */
+              but not the operation on the map.
+            */
             if ($s.maptype === 'Heatmap') {
                 evtMap.setZoom(evtMap.zoom - 1);
             }
@@ -751,7 +751,7 @@ Application.$controller('GooglemapsController', ['$scope', 'Utils', '$element', 
                 return;
             }
             /* add this method when loader for data input is done
-             google.maps.event.clearInstanceListeners($s.map);
+               google.maps.event.clearInstanceListeners($s.map);
             */
             $s.map.heatmapLayer = undefined;
         });
@@ -766,43 +766,43 @@ Application.$controller('GooglemapsController', ['$scope', 'Utils', '$element', 
     }]);
 </script>
 <script id="Main.variables.json">
-    var _MainPage_Variables_ ={}
+var _MainPage_Variables_ ={ }
 </script>
 <script id="Main.html" type="text/ng-template">
-    <wm-page name="googlemap" data-ng-controller="GooglemapsController">
-        <wm-content name="googlemapview">
-            <wm-spinner show="bind:isMapLoading" class="spinner-transparent" name="googlemapspinner"></wm-spinner>
-            <ng-map id="map" default-style="false" map-initialized="onMapLoad" class="full-height full-width" center="{{center}}" zoom="{{zoom}}" draggable="true">
-                <div ng-repeat="marker in markersData">
-                    <marker position="{{marker.latlng}}" on-mouseover="onMarkerHover(event, marker)" on-click="onMarkerClick(event, marker)" icon="{{marker.iconData}}">
-                    </marker>
-                </div>
-                <shape ng-if="radius" name="circle" ng-repeat="shape in markersData"
-                       stroke-color="{{shape.color}}"
-                       stroke-opacity="0.5"
-                       stroke-weight="2"
-                       fill-color="{{shape.color}}"
-                       fill-opacity="0.35"
-                       center="{{shape.latlng}}"
-                       radius="{{shape.radius}}">
-                </shape>
-                <directions
-                        ng-if="directionsData.wayPoints"
-                        travel-mode="{{travelMode}}"
-                        waypoints="{{directionsData.wayPoints}}"
-                        origin="{{directionsData.origin}}"
-                        destination="{{directionsData.destination}}">
-                </directions>
-                <directions
-                        ng-if="!directionsData.wayPoints"
-                        travel-mode="{{travelMode}}"
-                        origin="{{directionsData.origin}}"
-                        destination="{{directionsData.destination}}">
-                </directions>
-                <traffic-layer ng-if="trafficLayer"></traffic-layer>
-                <transit-layer ng-if="transitLayer"></transit-layer>
-                <heatmap-layer id="heatmapLayer" ng-if="isHeatMapDataReady" data="heatmapData"></heatmap-layer>
-            </ng-map>
-        </wm-content>
-    </wm-page>
+<wm-page name="googlemap" data-ng-controller="GooglemapsController">
+    <wm-content name="googlemapview">
+        <wm-spinner show="bind:isMapLoading" class="spinner-transparent"></wm-spinner>
+        <ng-map id="map" default-style="false" map-initialized="onMapLoad" class="full-height full-width" center="{{center}}" zoom="{{zoom}}" draggable="true">
+            <div ng-repeat="marker in markersData">
+                <marker position="{{marker.latlng}}" on-mouseover="onMarkerHover(event, marker)" on-click="onMarkerClick(event, marker)" icon="{{marker.iconData}}">
+                </marker>
+            </div>
+            <shape ng-if="radius" name="circle" ng-repeat="shape in markersData"
+                   stroke-color="{{shape.color}}"
+                   stroke-opacity="0.5"
+                   stroke-weight="2"
+                   fill-color="{{shape.color}}"
+                   fill-opacity="0.35"
+                   center="{{shape.latlng}}"
+                   radius="{{shape.radius}}">
+            </shape>
+            <directions
+                    ng-if="directionsData.wayPoints"
+                    travel-mode="{{travelMode}}"
+                    waypoints="{{directionsData.wayPoints}}"
+                    origin="{{directionsData.origin}}"
+                    destination="{{directionsData.destination}}">
+            </directions>
+            <directions
+                    ng-if="!directionsData.wayPoints"
+                    travel-mode="{{travelMode}}"
+                    origin="{{directionsData.origin}}"
+                    destination="{{directionsData.destination}}">
+            </directions>
+            <traffic-layer ng-if="trafficLayer"></traffic-layer>
+            <transit-layer ng-if="transitLayer"></transit-layer>
+            <heatmap-layer id="heatmapLayer" ng-if="isHeatMapDataReady" data="heatmapData"></heatmap-layer>
+        </ng-map>
+    </wm-content>
+</wm-page>
 </script>

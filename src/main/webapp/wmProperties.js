@@ -1,5 +1,5 @@
 var _WM_APP_PROPERTIES = {
-  "activeTheme" : "material",
+  "activeTheme" : "graffiti",
   "defaultLanguage" : "en",
   "displayName" : "VerifyVCSshare",
   "homePage" : "Main",
