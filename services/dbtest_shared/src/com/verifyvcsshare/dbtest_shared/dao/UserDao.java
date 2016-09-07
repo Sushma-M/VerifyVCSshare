@@ -13,14 +13,14 @@ import org.springframework.stereotype.Repository;
 
 import com.wavemaker.runtime.data.dao.WMGenericDaoImpl;
 
-import com.verifyvcsshare.dbtest_shared.Table1;
+import com.verifyvcsshare.dbtest_shared.User;
 
 /**
- * Specifies methods used to obtain and modify Table1 related information
+ * Specifies methods used to obtain and modify User related information
  * which is stored in the database.
  */
-@Repository("dbtest_shared.Table1Dao")
-public class Table1Dao extends WMGenericDaoImpl<Table1, Integer> {
+@Repository("dbtest_shared.UserDao")
+public class UserDao extends WMGenericDaoImpl<User, Integer> {
 
     @Autowired
     @Qualifier("dbtest_sharedTemplate")

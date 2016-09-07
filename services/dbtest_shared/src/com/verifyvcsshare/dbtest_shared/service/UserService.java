@@ -14,64 +14,64 @@ import com.wavemaker.runtime.data.export.ExportType;
 import com.wavemaker.runtime.data.expression.QueryFilter;
 import com.wavemaker.runtime.file.model.Downloadable;
 
-import com.verifyvcsshare.dbtest_shared.Table1;
+import com.verifyvcsshare.dbtest_shared.User;
 
 /**
- * Service object for domain model class {@link Table1}.
+ * Service object for domain model class {@link User}.
  */
-public interface Table1Service {
+public interface UserService {
 
     /**
-     * Creates a new Table1. It does cascade insert for all the children in a single transaction.
+     * Creates a new User. It does cascade insert for all the children in a single transaction.
      *
-     * This method overrides the input field values using Server side or database managed properties defined on Table1 if any.
+     * This method overrides the input field values using Server side or database managed properties defined on User if any.
      *
-     * @param table1 Details of the Table1 to be created; value cannot be null.
-     * @return The newly created Table1.
+     * @param user Details of the User to be created; value cannot be null.
+     * @return The newly created User.
      */
-	Table1 create(Table1 table1);
+	User create(User user);
 
 
 	/**
-	 * Returns Table1 by given id if exists.
+	 * Returns User by given id if exists.
 	 *
-	 * @param table1Id The id of the Table1 to get; value cannot be null.
-	 * @return Table1 associated with the given table1Id.
-     * @throws EntityNotFoundException If no Table1 is found.
+	 * @param userId The id of the User to get; value cannot be null.
+	 * @return User associated with the given userId.
+     * @throws EntityNotFoundException If no User is found.
 	 */
-	Table1 getById(Integer table1Id) throws EntityNotFoundException;
+	User getById(Integer userId) throws EntityNotFoundException;
 
     /**
-	 * Find and return the Table1 by given id if exists, returns null otherwise.
+	 * Find and return the User by given id if exists, returns null otherwise.
 	 *
-	 * @param table1Id The id of the Table1 to get; value cannot be null.
-	 * @return Table1 associated with the given table1Id.
+	 * @param userId The id of the User to get; value cannot be null.
+	 * @return User associated with the given userId.
 	 */
-	Table1 findById(Integer table1Id);
+	User findById(Integer userId);
 
 
 	/**
-	 * Updates the details of an existing Table1. It replaces all fields of the existing Table1 with the given table1.
+	 * Updates the details of an existing User. It replaces all fields of the existing User with the given user.
 	 *
-     * This method overrides the input field values using Server side or database managed properties defined on Table1 if any.
+     * This method overrides the input field values using Server side or database managed properties defined on User if any.
      *
-	 * @param table1 The details of the Table1 to be updated; value cannot be null.
-	 * @return The updated Table1.
-	 * @throws EntityNotFoundException if no Table1 is found with given input.
+	 * @param user The details of the User to be updated; value cannot be null.
+	 * @return The updated User.
+	 * @throws EntityNotFoundException if no User is found with given input.
 	 */
-	Table1 update(Table1 table1) throws EntityNotFoundException;
+	User update(User user) throws EntityNotFoundException;
 
     /**
-	 * Deletes an existing Table1 with the given id.
+	 * Deletes an existing User with the given id.
 	 *
-	 * @param table1Id The id of the Table1 to be deleted; value cannot be null.
-	 * @return The deleted Table1.
-	 * @throws EntityNotFoundException if no Table1 found with the given id.
+	 * @param userId The id of the User to be deleted; value cannot be null.
+	 * @return The deleted User.
+	 * @throws EntityNotFoundException if no User found with the given id.
 	 */
-	Table1 delete(Integer table1Id) throws EntityNotFoundException;
+	User delete(Integer userId) throws EntityNotFoundException;
 
 	/**
-	 * Find all Table1s matching the given QueryFilter(s).
+	 * Find all Users matching the given QueryFilter(s).
      * All the QueryFilter(s) are ANDed to filter the results.
      * This method returns Paginated results.
 	 *
@@ -79,30 +79,30 @@ public interface Table1Service {
 	 *
      * @param queryFilters Array of queryFilters to filter the results; No filters applied if the input is null/empty.
      * @param pageable Details of the pagination information along with the sorting options. If null returns all matching records.
-     * @return Paginated list of matching Table1s.
+     * @return Paginated list of matching Users.
      *
      * @see QueryFilter
      * @see Pageable
      * @see Page
 	 */
     @Deprecated
-	Page<Table1> findAll(QueryFilter[] queryFilters, Pageable pageable);
+	Page<User> findAll(QueryFilter[] queryFilters, Pageable pageable);
 
     /**
-	 * Find all Table1s matching the given input query. This method returns Paginated results.
+	 * Find all Users matching the given input query. This method returns Paginated results.
      * Note: Go through the documentation for <u>query</u> syntax.
 	 *
      * @param query The query to filter the results; No filters applied if the input is null/empty.
      * @param pageable Details of the pagination information along with the sorting options. If null returns all matching records.
-     * @return Paginated list of matching Table1s.
+     * @return Paginated list of matching Users.
      *
      * @see Pageable
      * @see Page
 	 */
-    Page<Table1> findAll(String query, Pageable pageable);
+    Page<User> findAll(String query, Pageable pageable);
 
     /**
-	 * Exports all Table1s matching the given input query to the given exportType format.
+	 * Exports all Users matching the given input query to the given exportType format.
      * Note: Go through the documentation for <u>query</u> syntax.
 	 *
      * @param exportType The format in which to export the data; value cannot be null.
@@ -117,11 +117,11 @@ public interface Table1Service {
     Downloadable export(ExportType exportType, String query, Pageable pageable);
 
 	/**
-	 * Retrieve the count of the Table1s in the repository with matching query.
+	 * Retrieve the count of the Users in the repository with matching query.
      * Note: Go through the documentation for <u>query</u> syntax.
      *
      * @param query query to filter results. No filters applied if the input is null/empty.
-	 * @return The count of the Table1.
+	 * @return The count of the User.
 	 */
 	long count(String query);
 

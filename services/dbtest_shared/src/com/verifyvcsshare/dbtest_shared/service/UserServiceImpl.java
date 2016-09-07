@@ -21,75 +21,75 @@ import com.wavemaker.runtime.data.export.ExportType;
 import com.wavemaker.runtime.data.expression.QueryFilter;
 import com.wavemaker.runtime.file.model.Downloadable;
 
-import com.verifyvcsshare.dbtest_shared.Table1;
+import com.verifyvcsshare.dbtest_shared.User;
 
 
 /**
- * ServiceImpl object for domain model class Table1.
+ * ServiceImpl object for domain model class User.
  *
- * @see Table1
+ * @see User
  */
-@Service("dbtest_shared.Table1Service")
-public class Table1ServiceImpl implements Table1Service {
+@Service("dbtest_shared.UserService")
+public class UserServiceImpl implements UserService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(Table1ServiceImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
 
 
     @Autowired
-    @Qualifier("dbtest_shared.Table1Dao")
-    private WMGenericDao<Table1, Integer> wmGenericDao;
+    @Qualifier("dbtest_shared.UserDao")
+    private WMGenericDao<User, Integer> wmGenericDao;
 
-    public void setWMGenericDao(WMGenericDao<Table1, Integer> wmGenericDao) {
+    public void setWMGenericDao(WMGenericDao<User, Integer> wmGenericDao) {
         this.wmGenericDao = wmGenericDao;
     }
 
     @Transactional(value = "dbtest_sharedTransactionManager")
     @Override
-	public Table1 create(Table1 table1) {
-        LOGGER.debug("Creating a new Table1 with information: {}", table1);
-        Table1 table1Created = this.wmGenericDao.create(table1);
-        return table1Created;
+	public User create(User user) {
+        LOGGER.debug("Creating a new User with information: {}", user);
+        User userCreated = this.wmGenericDao.create(user);
+        return userCreated;
     }
 
 	@Transactional(readOnly = true, value = "dbtest_sharedTransactionManager")
 	@Override
-	public Table1 getById(Integer table1Id) throws EntityNotFoundException {
-        LOGGER.debug("Finding Table1 by id: {}", table1Id);
-        Table1 table1 = this.wmGenericDao.findById(table1Id);
-        if (table1 == null){
-            LOGGER.debug("No Table1 found with id: {}", table1Id);
-            throw new EntityNotFoundException(String.valueOf(table1Id));
+	public User getById(Integer userId) throws EntityNotFoundException {
+        LOGGER.debug("Finding User by id: {}", userId);
+        User user = this.wmGenericDao.findById(userId);
+        if (user == null){
+            LOGGER.debug("No User found with id: {}", userId);
+            throw new EntityNotFoundException(String.valueOf(userId));
         }
-        return table1;
+        return user;
     }
 
     @Transactional(readOnly = true, value = "dbtest_sharedTransactionManager")
 	@Override
-	public Table1 findById(Integer table1Id) {
-        LOGGER.debug("Finding Table1 by id: {}", table1Id);
-        return this.wmGenericDao.findById(table1Id);
+	public User findById(Integer userId) {
+        LOGGER.debug("Finding User by id: {}", userId);
+        return this.wmGenericDao.findById(userId);
     }
 
 
 	@Transactional(rollbackFor = EntityNotFoundException.class, value = "dbtest_sharedTransactionManager")
 	@Override
-	public Table1 update(Table1 table1) throws EntityNotFoundException {
-        LOGGER.debug("Updating Table1 with information: {}", table1);
-        this.wmGenericDao.update(table1);
+	public User update(User user) throws EntityNotFoundException {
+        LOGGER.debug("Updating User with information: {}", user);
+        this.wmGenericDao.update(user);
 
-        Integer table1Id = table1.getId();
+        Integer userId = user.getId();
 
-        return this.wmGenericDao.findById(table1Id);
+        return this.wmGenericDao.findById(userId);
     }
 
     @Transactional(value = "dbtest_sharedTransactionManager")
 	@Override
-	public Table1 delete(Integer table1Id) throws EntityNotFoundException {
-        LOGGER.debug("Deleting Table1 with id: {}", table1Id);
-        Table1 deleted = this.wmGenericDao.findById(table1Id);
+	public User delete(Integer userId) throws EntityNotFoundException {
+        LOGGER.debug("Deleting User with id: {}", userId);
+        User deleted = this.wmGenericDao.findById(userId);
         if (deleted == null) {
-            LOGGER.debug("No Table1 found with id: {}", table1Id);
-            throw new EntityNotFoundException(String.valueOf(table1Id));
+            LOGGER.debug("No User found with id: {}", userId);
+            throw new EntityNotFoundException(String.valueOf(userId));
         }
         this.wmGenericDao.delete(deleted);
         return deleted;
@@ -97,22 +97,22 @@ public class Table1ServiceImpl implements Table1Service {
 
 	@Transactional(readOnly = true, value = "dbtest_sharedTransactionManager")
 	@Override
-	public Page<Table1> findAll(QueryFilter[] queryFilters, Pageable pageable) {
-        LOGGER.debug("Finding all Table1s");
+	public Page<User> findAll(QueryFilter[] queryFilters, Pageable pageable) {
+        LOGGER.debug("Finding all Users");
         return this.wmGenericDao.search(queryFilters, pageable);
     }
 
     @Transactional(readOnly = true, value = "dbtest_sharedTransactionManager")
     @Override
-    public Page<Table1> findAll(String query, Pageable pageable) {
-        LOGGER.debug("Finding all Table1s");
+    public Page<User> findAll(String query, Pageable pageable) {
+        LOGGER.debug("Finding all Users");
         return this.wmGenericDao.searchByQuery(query, pageable);
     }
 
     @Transactional(readOnly = true, value = "dbtest_sharedTransactionManager")
     @Override
     public Downloadable export(ExportType exportType, String query, Pageable pageable) {
-        LOGGER.debug("exporting data in the service dbtest_shared for table Table1 to {} format", exportType);
+        LOGGER.debug("exporting data in the service dbtest_shared for table User to {} format", exportType);
         return this.wmGenericDao.export(exportType, query, pageable);
     }
 
