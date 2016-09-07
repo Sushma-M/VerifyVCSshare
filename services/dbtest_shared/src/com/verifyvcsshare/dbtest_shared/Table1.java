@@ -23,7 +23,7 @@ import javax.persistence.Table;
 public class Table1 implements Serializable {
 
     private int id;
-    private String name;
+    private String fname;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,13 +36,13 @@ public class Table1 implements Serializable {
         this.id = id;
     }
 
-    @Column(name = "`name`", nullable = true, length = 255)
-    public String getName() {
-        return this.name;
+    @Column(name = "`fname`", nullable = true, length = 255)
+    public String getFname() {
+        return this.fname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFname(String fname) {
+        this.fname = fname;
     }
 
 

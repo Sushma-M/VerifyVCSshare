@@ -2,8 +2,8 @@
 <service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="dbtest_shared" type="DataService" springFile="dbtest_shared.spring.xml">
     <dataobjects>
         <dataobject javaType="com.verifyvcsshare.dbtest_shared.Table1">
+            <element name="fname" typeRef="java.lang.String" allowNull="true"/>
             <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
-            <element name="name" typeRef="java.lang.String" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.wavemaker.runtime.data.expression.QueryFilter">
             <element name="attributeName" typeRef="java.lang.String" allowNull="true"/>
